@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "scalapb/scalapb.proto";
+
+package io.teranga;
+
+service Game {
+  rpc StreamPlayFor(stream Player) returns (stream Play) {}
+}
+
+message Player {
+  string name = 1;
+}
+
+message Play {
+  Player player = 1;
+  enum OUTCOME {
+    rock = 0;
+    paper = 1;
+    cisor = 2;
+  }
+  OUTCOME outcome = 2;
+}

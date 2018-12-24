@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "scalapb/scalapb.proto";
+
+package io.teranga;
+
+service Telemetry {
+    rpc Report(stream TEvent) returns (TSummary);
+}
+
+message TEvent {
+
+    google.protobuf.Timestamp timestamp = 1;
+    int32 device_id = 2;
+    float measurement = 3;
+}
+
+message TSummary {
+
+    int32 device_id = 1;
+    float measurement_avg = 2;
+    float measurement_max = 3;
+    float measurement_min = 4;
+    float measurement_count = 5;
+
+}

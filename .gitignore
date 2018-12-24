@@ -1,0 +1,36 @@
+# Project-specific .gitignore
+#
+# Everything specific to your OS, IDE, etc.. should go into your global .gitignore
+# (usually found at $HOME/.gitignore)
+
+target
+ideatarget
+.target
+bin
+.cache
+.cache-main
+.cache-tests
+.classpath
+.project
+.tmpBin
+.factorypath
+.settings
+logs
+
+bin/
+/db
+.eclipse
+/lib/
+/logs/
+/modules
+/project/project
+/project/target
+/target
+tmp/
+test-result
+server.pid
+*.eml
+/dist/
+.idea
+
+demo
